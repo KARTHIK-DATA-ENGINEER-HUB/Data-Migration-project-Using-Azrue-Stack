@@ -1,0 +1,26 @@
+project-root/
+│
+├── README.md           
+├── .gitignore                        
+│
+├── adf/
+│   ├── pipelines/
+│   │   └── data_migration_pipeline.json
+│   ├── datasets/
+│   │   ├── sql_source_dataset.json
+│   │   └── adls_sink_dataset.json
+│   └── linkedservices/
+│       ├── sql_server_ls.json
+│       ├── adls_gen2_ls.json
+│       └── databricks_ls.json
+│
+├── databricks/
+│   ├── notebooks/
+│   │   ├── bronze_to_silver.py
+│   │   └── silver_to_gold.py
+│   └── configs/
+│       └── cluster_config.json
+│
+├── docs/
+   ├── architecture_diagram.png
+   └── data_dictionary.md
