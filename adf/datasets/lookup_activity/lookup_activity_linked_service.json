@@ -1,0 +1,32 @@
+{
+    "name": "SqlServer1",
+    "type": "Microsoft.DataFactory/factories/linkedservices",
+    "properties": {
+        "annotations": [],
+        "type": "SqlServer",
+        "typeProperties": {
+            "server": "DESKTOP-6KLOV10\\MSSQLSERVER2025",
+            "database": "AdventureWorksLT2017",
+            "encrypt": "mandatory",
+            "trustServerCertificate": true,
+            "authenticationType": "SQL",
+            "userName": "karthik1",
+            "password": {
+                "type": "AzureKeyVaultSecret",
+                "store": {
+                    "referenceName": "AzureKeyVault1",
+                    "type": "LinkedServiceReference"
+                },
+                "secretName": "password",
+                "secretVersion": "c382494149834836b36c9aac4daad200"
+            },
+            "alwaysEncryptedSettings": {
+                "alwaysEncryptedAkvAuthType": "ManagedIdentity"
+            }
+        },
+        "connectVia": {
+            "referenceName": "SHIR",
+            "type": "IntegrationRuntimeReference"
+        }
+    }
+}
