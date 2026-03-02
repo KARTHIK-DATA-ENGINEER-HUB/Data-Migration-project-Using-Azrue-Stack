@@ -1,0 +1,25 @@
+1. START
+   │
+2. ADF Lookup Activity
+   ├── Query: SELECT schema and table names
+   └── Output: Table list from SalesLT schema
+   │
+3. ForEach Activity (Loop through tables)
+   ├── Parameter: Current table name
+   └── Execute: Copy Activity
+       │
+4. Copy Activity
+   ├── Source: SQL Server table
+   └── Sink: ADLS Bronze/{schema}/{table}/
+   │
+5. Databricks Notebook - Bronze to Silver
+   ├── Read: Parquet from Bronze
+   ├── Transform: DateTime to Date conversion
+   └── Write: Delta format to Silver
+   │
+6. Databricks Notebook - Silver to Gold
+   ├── Read: Delta from Silver
+   ├── Transform: Column renaming
+   └── Write: Delta format to Gold
+   │
+7. END
